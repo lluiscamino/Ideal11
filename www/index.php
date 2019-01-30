@@ -1,5 +1,5 @@
 <?php 
-require 'config\includes.php';
+require 'config/includes.php';
 $orderBy = isset($_GET['order']) ? (int) $_GET['order'] : 0;
 $direction = isset($_GET['direction']) ? $_GET['direction'] : 'DESC';
 $numPages = ceil((json_decode($apiClient->request('GET', 'lineup/info.php')->getBody(), true)['numEntries'])/ENTRIES_PER_PAGE);

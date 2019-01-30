@@ -1,5 +1,5 @@
 <?php
-require 'config\includes.php';
+require 'config/includes.php';
 if (isset($_GET['name'])) {
     try {
         $response = $apiClient->request('GET', 'user/read_one.php',

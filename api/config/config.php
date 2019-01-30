@@ -1,2 +1,2 @@
 <?php 
-define('ROOT', 'C:\xampp\htdocs\Ideal11');
+define('ROOT', 'C:/xampp/htdocs/Ideal11');

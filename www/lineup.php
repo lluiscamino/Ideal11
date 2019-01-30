@@ -1,5 +1,5 @@
 <?php
-require 'config\includes.php';
+require 'config/includes.php';
 if (isset($_GET['id'])) {
     $response = $apiClient->request('GET', 'lineup/read_one.php',
         array('query' =>

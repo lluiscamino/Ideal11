@@ -1,5 +1,5 @@
 <?php
-require 'config\includes.php';
+require 'config/includes.php';
 require 'resources/php/create_image.php';
 if (isset($_POST['createLineUp'])) {
     if (isset($_POST['team']) && isset($_POST['style']) && isset($_POST['formation']) && isset($_POST['kitUrl'])) {

@@ -1,5 +1,5 @@
 <?php
-require 'config\includes.php';
+require 'config/includes.php';
 $responseStyles = $apiClient->request('GET', 'formationStyle/read.php');
 $responseEs = $apiClient->request('GET', 'team/read.php?country=es');
 $responseEn = $apiClient->request('GET', 'team/read.php?country=en');
