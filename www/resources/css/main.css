@@ -145,3 +145,6 @@ a {
 	cursor: pointer;
 	display: none;
 }
+.modal-dialog {
+	color: #514b4b;
+}

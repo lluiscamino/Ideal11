@@ -5,6 +5,22 @@ if ($this->e($alertText) !== '') {
 }
 $shirtUrl = $setTeam !== '' ? '' : 'resources/images/kits/default.png';
 ?>
+<div class="modal fade" id="errorNot11Players" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body"><strong>You have to select 11 players.</strong> You have only placed <script>document.write(String(playersOnField.length))</script> players on the field.</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Accept</button>
+            </div>
+        </div>
+    </div>
+</div>
 <form method="post" id="create-lineup-form">
     <div class="form-group">
         <label for="team">Team</label>

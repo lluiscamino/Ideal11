@@ -4,8 +4,9 @@ function checkSubmit(event) {
     if (document.getElementById('player-name') === document.activeElement) {
         event.preventDefault();
         addPlayer();
+        return false;
     } else if (playersOnField.length !== 11) {
-        alert('You have to select 11 players');
+        $('#errorNot11Players').modal();
         event.preventDefault();
         return false;
     }
