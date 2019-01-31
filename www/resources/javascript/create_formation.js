@@ -6,6 +6,7 @@ function checkSubmit(event) {
         addPlayer();
         return false;
     } else if (playersOnField.length !== 11) {
+        document.getElementById('numPlayersField').innerHTML = String(playersOnField.length);
         $('#errorNot11Players').modal();
         event.preventDefault();
         return false;

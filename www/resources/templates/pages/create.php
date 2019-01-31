@@ -14,7 +14,7 @@ $shirtUrl = $setTeam !== '' ? '' : 'resources/images/kits/default.png';
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body"><strong>You have to select 11 players.</strong> You have only placed <script>document.write(String(playersOnField.length))</script> players on the field.</div>
+            <div class="modal-body"><strong>You have to select 11 players.</strong> You have only placed <span id="numPlayersField">0</span> players on the field.</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Accept</button>
             </div>
