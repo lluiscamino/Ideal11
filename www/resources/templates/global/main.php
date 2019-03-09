@@ -30,6 +30,7 @@
        <link href="vendor/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
        <script src="vendor/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
        <script src="vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
+       <script src="vendor/touch-punch/jquery.ui.touch-punch.min.js"></script>
        <script src="resources/javascript/create_formation.js"></script>
        <?php
        }

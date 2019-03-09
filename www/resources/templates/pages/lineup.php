@@ -43,5 +43,6 @@ $imageUrl = 'resources/images/lineups/' . $data['id'] . '.png';
         <hr>
         <a href=""><img src="resources/images/icons/heart.png" alt="Heart (icon)" title="I like it"> I like it!</a><br>
         <a href='create.php?code=<?php echo $data['code']; ?>&team=<?php echo $data['team']; ?>&style=<?php echo $data['style']; ?>'><img src="resources/images/icons/plus.png" alt="Plus (icon)" title="Create new LineUp"> Create a new LineUp from this one</a>
+        <br style="clear: both;">
     </div>
 </div>

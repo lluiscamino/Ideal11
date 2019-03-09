@@ -120,7 +120,7 @@ $shirtUrl = $setTeam !== '' ? '' : 'resources/images/kits/default.png';
         <input type="hidden" id="kitUrl" name="kitUrl" value="<?php echo $shirtUrl?>" required>
         <input type="hidden" id="formation" name="formation" required>
         <div class="create-team">
-            <div class="field" id="field">
+            <div class="field editable-field" id="field">
             </div>
             <div class="select-player">
                 <strong>Add players</strong>
@@ -139,7 +139,7 @@ $shirtUrl = $setTeam !== '' ? '' : 'resources/images/kits/default.png';
 <script>
     $('#field').droppable({
         drop: function(ev, ui) {
-            let id = idtoInt(ui.draggable.attr('id'));
+            let id = idToInt(ui.draggable.attr('id'));
             if (!playersOnField.includes(id)) {
                 playersOnField.push(id);
             }

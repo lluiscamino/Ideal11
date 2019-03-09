@@ -92,7 +92,7 @@ function removeFromField(id) {
     element.children[0].style.display = 'none';
 }
 
-function idtoInt(id) {
+function idToInt(id) {
     return parseInt(id.substring(4))+1;
 }
 

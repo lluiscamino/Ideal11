@@ -70,16 +70,20 @@ a {
 	height: 32px;
 	width: 32px;
 }
-.field {
-	--pitch-width: 315px;
-	width: var(--pitch-width);
-	height: calc(1.51333333333*var(--pitch-width));
+.editable-field {
 	background-image: url("../../resources/images/field-bg2.png");
 	background-size: 315px;
 	background-color: green;
+}
+.field {
 	border: 1px solid white;
 	float: left;
 	margin-right: 38px;
+}
+.field img, .editable-field {
+	--pitch-width: 315px;
+	width: var(--pitch-width);
+	height: calc(1.51333333333*var(--pitch-width));
 }
 .field-position {
 	height: 40px;

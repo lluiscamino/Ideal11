@@ -2,6 +2,7 @@
 require 'config/includes.php';
 require 'resources/php/create_image.php';
 if (isset($_POST['createLineUp'])) {
+    $success = false;
     if (isset($_POST['team']) && isset($_POST['style']) && isset($_POST['formation']) && isset($_POST['kitUrl'])) {
         try {
             $response = $apiClient->request('PUT', 'lineup/create.php',
@@ -14,11 +15,7 @@ if (isset($_POST['createLineUp'])) {
                     ),
                 ));
             $success = true;
-        } catch (Exception $e) {
-            $success = true;
-        }
-    } else {
-        $success = true;
+        } catch (Exception $e) {}
     }
 }
 $alertText = '';
