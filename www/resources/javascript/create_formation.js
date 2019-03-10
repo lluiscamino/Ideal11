@@ -89,6 +89,8 @@ function removeFromField(id) {
     let element = document.getElementById('drag' + id);
     element.style.top = parseInt((element.dataset.pos)/ 7)*75 + 80 + 'px';
     element.style.left = (350 + (65 * (element.dataset.pos) % 450)) + 'px';
+    element.classList.remove('onField');
+    element.classList.add('notOnField');
     element.children[0].style.display = 'none';
 }
 
@@ -97,14 +99,11 @@ function idToInt(id) {
 }
 
 function includeShirt(shirtUrl, name, top = 'unset', left = 'unset', onfield = false) {
-    if (top === 'unset' && left === 'unset') {
-        left = (350 + (65 * numPlayers % 450));
-        top = parseInt(numPlayers / 7)*75 + 80;
-    }
+    console.log(onfield);
     let width = name.length >= 10 ? 110 : 100;
     document.getElementById('available-players').innerHTML += '' +
-        '<div class="ui-widget-content available-player" id="drag' + numPlayers + '" data-player="' + name + '" data-pos="' + numPlayers + '" style="top: ' + top + 'px; left: ' + left + 'px; position: absolute">' +
-        '<img src="resources/images/icons/eye-minus.png" class="remove-player" title="Remove player ' + name + '" onclick="removeFromField(' + numPlayers + ')" style="display: ' + (onfield === true ? 'block' : 'none') + ';">' +
+        '<div class="ui-widget-content available-player ' + (!onfield ? 'notOnField' : 'onField') + '" id="drag' + numPlayers + '" data-player="' + name + '" data-pos="' + numPlayers + '" ondblclick="removeFromField(' + numPlayers + ')"  style=" ' + (top != 'unset' ? 'top: ' + top + 'px;' : '') + (left != 'unset' ? 'left: ' + left + 'px;' : '') + '" ondragstart="this.classList.remove(\'notOnField\'); this.classList.add(\'onField\')">' +
+        '<img src="resources/images/icons/eye-minus.png" class="remove-player" title="Remove player ' + name + '" onclick="removeFromField(' + numPlayers + ')" style="display: ' + (onfield ? 'block' : 'none') + ';">' +
         '<img class="kit" src="' + shirtUrl + '">' +
         '<div class="player-name" style="width: ' + width + '%;">' + name + ''
         + '</div>' + '</div>';

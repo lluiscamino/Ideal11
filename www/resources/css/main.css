@@ -39,8 +39,7 @@ a {
 	padding-right: 10px;
 }
 .lineup-preview {
-	border: 1px solid rgb(0, 128, 0);
-	border-style: dashed;
+	border: 1px dashed rgb(0, 128, 0);
 	margin-bottom: 16px;
 	padding: 10px;
 }
@@ -85,12 +84,6 @@ a {
 	width: var(--pitch-width);
 	height: calc(1.51333333333*var(--pitch-width));
 }
-.field-position {
-	height: 40px;
-	width: 40px;
-	border: 1px solid;
-	position: absolute;
-}
 .field-shirt {
 	width: 40px;
 	height: 40px;
@@ -104,6 +97,12 @@ a {
 	left: 0;
 	cursor: all-scroll;
 	float: left;
+}
+.notOnField {
+	position: initial !important;
+}
+.onField {
+	position: absolute !important;
 }
 .kit {
 	height: 60px;
@@ -132,8 +131,7 @@ a {
 }
 .select-player {
 	float: left;
-	height: 486px;
-	width: 460px;
+	max-width: 460px;
 }
 .create-team {
 	position: relative
