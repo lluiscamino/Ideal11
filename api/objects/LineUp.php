@@ -130,8 +130,9 @@ class LineUp {
         return self::$numLineUps;
     }
 
-    public static function create(\mysqli $mysqli, int $author, int $team, int $style, string $code): int {
-        $user = new User($mysqli, $author);
+    public static function create(\mysqli $mysqli, string $author, int $team, int $style, string $code): int {
+        $user = new User($mysqli, -1, $author);
+        $author = $user->getId();
         if ($stmt = $mysqli->prepare('INSERT INTO lineups (author, team, style, code, creation_date) VALUES (?, ?, ?, ?, NOW())')) {
             $user->increaseNumLineUps();
             $stmt->bind_param('iiis', $author, $team, $style, $code);

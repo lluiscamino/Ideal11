@@ -8,7 +8,7 @@ if (isset($_POST['createLineUp'])) {
             $response = $apiClient->request('PUT', 'lineup/create.php',
                 array('json' =>
                     array(
-                        'author' => isset($_SESSION['id']) ? $_SESSION['id'] : 0,
+                        'author' => isset($_SESSION['nickname']) ? $_SESSION['nickname'] : 'Guest',
                         'team' => $_POST['team'],
                         'style' => $_POST['style'],
                         'code' => $_POST['formation'],
