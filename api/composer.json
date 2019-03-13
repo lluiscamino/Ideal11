@@ -1,0 +1,6 @@
+{
+  "require": {
+    "bjeavons/zxcvbn-php": "^0.4",
+    "ext-json": "*"
+  }
+}

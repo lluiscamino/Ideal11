@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'config.php';
 require ROOT . '/vendor/autoload.php';
 require 'templates_connection.php';

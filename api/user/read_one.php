@@ -8,9 +8,11 @@ header('Content-Type: application/json');
 
 include '../config/includes.php';
 
-if (isset($_GET['nickname'])) {
+if (isset($_GET['nickname']) || isset($_GET['email'])) {
     try {
-        $lineUp = new User($mysqli, -1, $_GET['nickname']);
+        $nickname = isset($_GET['nickname']) ? $_GET['nickname'] : '';
+        $email = isset($_GET['email']) ? $_GET['email'] : '';
+        $lineUp = new User($mysqli, -1, $nickname, $email);
         http_response_code(200);
         echo $lineUp->toJSON();
     } catch (Exception $e) {

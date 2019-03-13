@@ -1,0 +1,29 @@
+/* Styles for password meter in the register form */
+#form-remove-margin {
+    margin-bottom: -0.4em;
+}
+.no-bottom-radius {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#password-strength-meter {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0 auto 1em;
+    width: 100%;
+    height: 0.5em;
+    background: none;
+}
+
+#password-strength-meter::-webkit-meter-bar {
+    background: none;
+}
+#password-strength-meter[value="1"]::-webkit-meter-optimum-value { background: #ff3b30; }
+#password-strength-meter[value="2"]::-webkit-meter-optimum-value { background: #fffa00; }
+#password-strength-meter[value="3"]::-webkit-meter-optimum-value { background: #fc0; }
+#password-strength-meter[value="4"]::-webkit-meter-optimum-value { background: #28cd41; }
+
+#password-strength-meter[value="1"]::-moz-meter-bar { background: #ff3b30; }
+#password-strength-meter[value="2"]::-moz-meter-bar { background: #fffa00; }
+#password-strength-meter[value="3"]::-moz-meter-bar { background: #fc0; }
+#password-strength-meter[value="4"]::-moz-meter-bar { background: #28cd41; }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 require 'config/includes.php';
 $orderBy = isset($_GET['order']) ? (int) $_GET['order'] : 0;
 $direction = isset($_GET['direction']) ? $_GET['direction'] : 'DESC';
