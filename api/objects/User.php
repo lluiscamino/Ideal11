@@ -66,6 +66,15 @@ class User {
             $stmt->close();
         }
     }
+
+    private function updateLastLoginDate(): bool {
+        if ($stmt = $this->conn->prepare('UPDATE users SET last_login = NOW() WHERE id = ?')) {
+            $this->lastLogin = date('Y-m-d h:I:s');
+            $stmt->bind_param('i', $this->id);
+            return $stmt->execute();
+        }
+        throw new \Exception('SQL error.');
+    }
     
     public function toArray(): array {
         return array('nickname' => $this->nickname, 'email' => $this->email, 'registerDate' => $this->registerDate, 'lastLogin' => $this->lastLogin, 'numLineups' => $this->numLineUps, 'avatar' => $this->avatar, 'vip' => (bool) $this->vip);
@@ -102,17 +111,19 @@ class User {
     }
 
     public static function login(\mysqli $mysqli, string $emailOrNickname, string $password): string {
-        if ($stmt = $mysqli->prepare('SELECT nickname, password FROM users WHERE nickname = ? OR email = ?')) {
+        if ($stmt = $mysqli->prepare('SELECT id, nickname, password FROM users WHERE nickname = ? OR email = ?')) {
             $stmt->bind_param('ss', $emailOrNickname, $emailOrNickname);
             $stmt->execute();
             $stmt->store_result();
             if ($stmt->num_rows === 0) {
                 throw new \Exception('Incorrect credentials');;
             }
-            $stmt->bind_result($nickname, $realPassword);
+            $stmt->bind_result($id, $nickname, $realPassword);
             $stmt->fetch();
             $stmt->close();
             if (password_verify($password, $realPassword)) {
+                $user = new User($mysqli, $id);
+                $user->updateLastLoginDate();
                 return $nickname;
             }
         }
