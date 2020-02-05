@@ -1,7 +1,9 @@
 # Ideal11
 Football/Soccer Line Up Generator Web App and API. 
 
-Screenshot: [Click here](https://i.imgur.com/lUpK6Nw.jpg)
+Demo: [https://lluis.life/proj/ideal11/index](https://lluis.life/proj/ideal11/index)
+
+Screenshot: [Click here](https://i.imgur.com/lUpK6Nw.jpg) 
 
 License: [MIT License](https://github.com/lluiscamino/Ideal11/blob/master/LICENSE)
 
